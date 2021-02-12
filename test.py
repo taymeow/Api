@@ -1,8 +1,8 @@
 import requests
 
-BASE = "http://127.0.0.1:500/"
+BASE = "http://127.0.0.1:5000/"
 
 # send get request to url
-response = request.get(BASE + "helloworld")
+response = requests.get(BASE + "helloworld/tay/21")
 # print response, .json so that it doesnt look like response object
 print(response.json())

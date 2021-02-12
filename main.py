@@ -8,11 +8,13 @@ api = Api(app)
 # inheriting from resource and making a class that is Resource
 class HelloWorld(Resource): 
     def get(self):
-        # returns python dictionary
-        return{"Hellow World"}
+        # returns python dictionary, need to make this a key value pair
+        # when we return information from api we need to make sure its serializable. returning json serializable objects
+        return{"name": name, "test": test}
 
 # registers class as a resource, / is default url
-api.add_resource(HelloWorld, "/helloworld")
+# want user to type string after helloworld. passing string param.
+api.add_resource(HelloWorld, "/helloworld/<string:name>/<int:test>")
 
 
 if __name__ == "__main__":
